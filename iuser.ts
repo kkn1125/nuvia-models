@@ -1,9 +1,14 @@
+import { UserRole } from './iuser-role';
+import { IUserSecret } from './iuser-secret';
+
 export interface IUser {
   id: number;
+  email: string;
   username: string;
   nickname: string;
-  email: string;
+  role: UserRole;
   createdAt: Date;
   updatedAt: Date;
   deletedAt: Date | null;
+  userSecret: IUserSecret;
 }
