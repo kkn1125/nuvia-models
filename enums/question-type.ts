@@ -11,4 +11,3 @@ export const QuestionType = {
   Date: 'date',
 } as const;
 export type QuestionType = (typeof QuestionType)[keyof typeof QuestionType];
-
