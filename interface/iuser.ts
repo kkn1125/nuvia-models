@@ -1,5 +1,5 @@
-import { UserRole } from './interface/iuser-role';
-import { IUserSecret } from './interface/iuser-secret';
+import { UserRole } from './iuser-role';
+import { IUserSecret } from './iuser-secret';
 
 export interface IUser {
   id: number;
