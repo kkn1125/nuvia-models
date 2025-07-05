@@ -1,4 +1,4 @@
-import type { IUser } from '../iuser';
+import { IUser } from './iuser';
 
 export interface IUserSecret {
   id: number;
