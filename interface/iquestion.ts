@@ -1,4 +1,4 @@
-import { DataType, InputType, QuestionType } from '@models/enums/question-type';
+import { DataType, InputType, QuestionType } from '@share/enums/question-type';
 
 export interface IQuestionOption {
   id: number;
