@@ -41,12 +41,10 @@ export class IQuestionLongText extends IQuestion {
 
 export class IQuestionSingleChoice extends IQuestion {
   questionType = QuestionType.InputType.SingleChoice;
-  options!: IQuestionOption[];
 }
 
 export class IQuestionMultipleChoice extends IQuestion {
   questionType = QuestionType.InputType.MultipleChoice;
-  options!: IQuestionOption[];
 }
 
 export type AllQuestion =
