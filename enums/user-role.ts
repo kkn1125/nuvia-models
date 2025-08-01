@@ -1,7 +1,8 @@
+/* 사용자 권한 */
 export const UserRole = {
-  User: 1,
-  Manager: 2,
-  Master: 3,
-  Admin: 4,
+  Viewer: 'viewer', // R 권한
+  Editor: 'editor', // CRU 권한
+  Admin: 'admin', // CRUD 권한
+  Owner: 'owner', // CRUD + Invite 권한
 } as const;
 export type UserRole = (typeof UserRole)[keyof typeof UserRole];
