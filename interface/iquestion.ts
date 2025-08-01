@@ -1,4 +1,6 @@
-import { DataType, InputType, QuestionType } from '@share/enums/question-type';
+import { DataType } from '@share/enums/data-type';
+import { InputType } from '@share/enums/input-type';
+import { QuestionType } from '@share/enums/question-type';
 
 export interface IQuestionOption {
   id: number;
@@ -16,13 +18,7 @@ export abstract class IQuestion {
   answers: Map<number, string> = new Map();
   isAnswered?: boolean = false;
 
-  constructor(
-    title: string,
-    questionType: InputType,
-    dataType: DataType,
-    required: boolean = true,
-    options?: IQuestionOption[],
-  ) {
+  constructor(title: string, questionType: InputType, dataType: DataType, required: boolean = true, options?: IQuestionOption[]) {
     this.title = title;
     this.questionType = questionType;
     this.dataType = dataType;
@@ -47,9 +43,4 @@ export class IQuestionMultipleChoice extends IQuestion {
   questionType = QuestionType.InputType.MultipleChoice;
 }
 
-export type AllQuestion =
-  | IQuestion
-  | IQuestionShortText
-  | IQuestionLongText
-  | IQuestionSingleChoice
-  | IQuestionMultipleChoice;
+export type AllQuestion = IQuestion | IQuestionShortText | IQuestionLongText | IQuestionSingleChoice | IQuestionMultipleChoice;
