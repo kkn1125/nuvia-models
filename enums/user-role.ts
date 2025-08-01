@@ -1,3 +1,4 @@
+/* 사용자 권한 */
 export const UserRole = {
   Viewer: 'viewer', // R 권한
   Editor: 'editor', // CRU 권한
