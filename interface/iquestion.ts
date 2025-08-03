@@ -11,18 +11,18 @@ export abstract class IQuestion {
   id!: number;
   title!: string;
   description!: string;
-  questionType!: InputType;
+  inputType!: InputType;
   dataType!: DataType;
-  required!: boolean;
+  isRequired!: boolean;
   options: IQuestionOption[] = [];
   answers: Map<number, string> = new Map();
   isAnswered?: boolean = false;
 
-  constructor(title: string, questionType: InputType, dataType: DataType, required: boolean = true, options?: IQuestionOption[]) {
+  constructor(title: string, inputType: InputType, dataType: DataType, isRequired: boolean = true, options?: IQuestionOption[]) {
     this.title = title;
-    this.questionType = questionType;
+    this.inputType = inputType;
     this.dataType = dataType;
-    this.required = required;
+    this.isRequired = isRequired;
     if (options) this.options = options;
   }
 }
@@ -32,19 +32,19 @@ export interface IQuestionWithoutId extends Omit<IQuestion, 'id' | 'options'> {
 }
 
 export class IQuestionShortText extends IQuestion {
-  questionType = QuestionType.InputType.ShortText;
+  inputType = QuestionType.InputType.ShortText;
 }
 
 export class IQuestionLongText extends IQuestion {
-  questionType = QuestionType.InputType.LongText;
+  inputType = QuestionType.InputType.LongText;
 }
 
 export class IQuestionSingleChoice extends IQuestion {
-  questionType = QuestionType.InputType.SingleChoice;
+  inputType = QuestionType.InputType.SingleChoice;
 }
 
 export class IQuestionMultipleChoice extends IQuestion {
-  questionType = QuestionType.InputType.MultipleChoice;
+  inputType = QuestionType.InputType.MultipleChoice;
 }
 
 export type AllQuestion = IQuestion | IQuestionShortText | IQuestionLongText | IQuestionSingleChoice | IQuestionMultipleChoice;
