@@ -5,7 +5,7 @@ export interface IResponseSurvey {
   name: string;
   description: string;
   category: string;
-  expiresAt: string;
+  expiresAt: Date | null;
   isPublic: boolean;
   participants: number;
   questions: IQuestion[];

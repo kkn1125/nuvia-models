@@ -27,6 +27,10 @@ export abstract class IQuestion {
   }
 }
 
+export interface IQuestionWithoutId extends Omit<IQuestion, 'id' | 'options'> {
+  options: Omit<IQuestionOption, 'id'>[];
+}
+
 export class IQuestionShortText extends IQuestion {
   questionType = QuestionType.InputType.ShortText;
 }
