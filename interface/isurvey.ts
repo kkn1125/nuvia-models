@@ -1,13 +1,15 @@
+import { SurveyStatus } from '@share/enums/survey-status';
 import { AllQuestion } from './iquestion';
 
 export interface ISurvey {
   id?: number;
+  userId: number;
   title: string;
   description: string;
   expiresAt: string | null;
   isPublic: boolean;
   questions: AllQuestion[];
-  status: 'active' | 'draft' | 'closed';
+  status: SurveyStatus;
   startDate?: Date;
   endDate?: Date;
   category: string;

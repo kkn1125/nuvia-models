@@ -1,5 +1,4 @@
 import { DataType } from '@share/enums/data-type';
-import { InputType } from '@share/enums/input-type';
 import { QuestionType } from '@share/enums/question-type';
 
 export interface IQuestionOption {
@@ -11,16 +10,16 @@ export abstract class IQuestion {
   id!: number;
   title!: string;
   description!: string;
-  inputType!: InputType;
+  questionType!: QuestionType;
   dataType!: DataType;
   isRequired!: boolean;
   options: IQuestionOption[] = [];
   answers: Map<number, string> = new Map();
   isAnswered?: boolean = false;
 
-  constructor(title: string, inputType: InputType, dataType: DataType, isRequired: boolean = true, options?: IQuestionOption[]) {
+  constructor(title: string, questionType: QuestionType, dataType: DataType, isRequired: boolean = true, options?: IQuestionOption[]) {
     this.title = title;
-    this.inputType = inputType;
+    this.questionType = questionType;
     this.dataType = dataType;
     this.isRequired = isRequired;
     if (options) this.options = options;
@@ -32,19 +31,19 @@ export interface IQuestionWithoutId extends Omit<IQuestion, 'id' | 'options'> {
 }
 
 export class IQuestionShortText extends IQuestion {
-  inputType = QuestionType.InputType.ShortText;
+  questionType = QuestionType.ShortText;
 }
 
 export class IQuestionLongText extends IQuestion {
-  inputType = QuestionType.InputType.LongText;
+  questionType = QuestionType.LongText;
 }
 
 export class IQuestionSingleChoice extends IQuestion {
-  inputType = QuestionType.InputType.SingleChoice;
+  questionType = QuestionType.SingleChoice;
 }
 
 export class IQuestionMultipleChoice extends IQuestion {
-  inputType = QuestionType.InputType.MultipleChoice;
+  questionType = QuestionType.MultipleChoice;
 }
 
 export type AllQuestion = IQuestion | IQuestionShortText | IQuestionLongText | IQuestionSingleChoice | IQuestionMultipleChoice;

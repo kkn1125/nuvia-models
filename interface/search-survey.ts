@@ -1,8 +1,10 @@
+import { SurveyStatus } from "@share/enums/survey-status";
+
 export interface SearchSurvey {
   id: number;
   title: string;
   description: string;
-  status: 'active' | 'draft' | 'closed';
+  status: SurveyStatus;
   responses: number;
   views: number;
   createdAt: Date;
