@@ -1,14 +1,14 @@
-import { UserRole } from '../enums/user-role';
+import { Survey } from '@/surveys/entities/survey.entity';
 import { IUserSecret } from './iuser-secret';
 
 export interface IUser {
   id: number;
-  email: string;
   name: string;
-  // nickname: string;
-  role: UserRole;
+  email: string;
+  nickname: string;
   createdAt: Date;
   updatedAt: Date;
   deletedAt: Date | null;
   userSecret: IUserSecret;
+  surveys: Survey[];
 }
