@@ -1,16 +1,17 @@
-import { SurveyStatus } from "@share/enums/survey-status";
+import { SurveyStatus } from '@share/enums/survey-status';
 
 export interface SearchSurvey {
   id: number;
   title: string;
   description: string;
-  status: SurveyStatus;
-  responses: number;
-  views: number;
-  createdAt: Date;
-  updatedAt: Date;
-  estimatedTime: number;
-  questions: number;
+  hashedUniqueKey: string;
   category: string;
   isPublic: boolean;
+  status: SurveyStatus;
+  viewCount: number;
+  estimatedTime: number;
+  questionAmount: number;
+  responseAmount: number;
+  createdAt: Date;
+  updatedAt: Date;
 }
