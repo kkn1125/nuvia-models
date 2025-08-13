@@ -2,32 +2,44 @@ import { DataType } from '@share/enums/data-type';
 import { QuestionType } from '@share/enums/question-type';
 
 export interface IQuestionOption {
-  id: number;
+  id: number | null;
+  idx: number;
   label: string;
+  sequence: number;
 }
 
 export abstract class IQuestion {
-  id!: number;
+  id!: number | null;
+  idx!: number;
   title!: string;
-  description!: string;
+  description!: string | null;
   questionType!: QuestionType;
   dataType!: DataType;
   isRequired!: boolean;
-  options: IQuestionOption[] = [];
+  questionOptions: IQuestionOption[] = [];
   answers: Map<number, string> = new Map();
   isAnswered?: boolean = false;
+  sequence!: number;
 
-  constructor(title: string, questionType: QuestionType, dataType: DataType, isRequired: boolean = true, options?: IQuestionOption[]) {
+  constructor(
+    title: string,
+    questionType: QuestionType,
+    dataType: DataType,
+    isRequired: boolean = true,
+    options?: IQuestionOption[],
+    sequence: number = 0,
+  ) {
     this.title = title;
     this.questionType = questionType;
     this.dataType = dataType;
     this.isRequired = isRequired;
-    if (options) this.options = options;
+    if (options) this.questionOptions = options;
+    this.sequence = sequence;
   }
 }
 
-export interface IQuestionWithoutId extends Omit<IQuestion, 'id' | 'options'> {
-  options: Omit<IQuestionOption, 'id'>[];
+export interface IQuestionWithoutId extends Omit<IQuestion, 'id' | 'questionOptions'> {
+  questionOptions: Omit<IQuestionOption, 'id' | 'idx'>[];
 }
 
 export class IQuestionShortText extends IQuestion {

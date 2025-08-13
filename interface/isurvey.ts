@@ -4,6 +4,7 @@ import { AllQuestion } from './iquestion';
 export interface ISurvey {
   id?: number;
   userId: number;
+  hashedUniqueKey: string;
   title: string;
   description: string;
   expiresAt: string | null;

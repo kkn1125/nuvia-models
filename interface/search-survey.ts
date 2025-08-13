@@ -1,3 +1,4 @@
+import { GetCategoryResponse } from '@/models/GetCategoryResponse';
 import { SurveyStatus } from '@share/enums/survey-status';
 
 export interface SearchSurvey {
@@ -5,7 +6,7 @@ export interface SearchSurvey {
   title: string;
   description: string;
   hashedUniqueKey: string;
-  category: string;
+  category: GetCategoryResponse;
   isPublic: boolean;
   status: SurveyStatus;
   viewCount: number;
