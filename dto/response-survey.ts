@@ -1,10 +1,11 @@
+import { ICategory } from '@share/interface/icategory';
 import { IQuestion } from '@share/interface/iquestion';
 
 export interface IResponseSurvey {
   title: string;
   name: string;
   description: string | null;
-  categoryId: number;
+  category: ICategory;
   expiresAt: Date | null;
   isPublic: boolean;
   participants: number;
@@ -13,6 +14,10 @@ export interface IResponseSurvey {
   updatedAt: Date;
 }
 
-export interface IResponseSurveyCategory extends Omit<IResponseSurvey, 'categoryId'> {
-  category: string;
+export interface IResponseSurveyCategory extends Omit<IResponseSurvey, 'questions'> {
+  questions: Omit<IQuestion, 'answers' | 'isAnswered'>[];
+}
+
+export interface IResponseSurveyQuestionWithAnswers extends Omit<IResponseSurvey, 'questions'> {
+  questions: (Omit<IQuestion, 'answers' | 'isAnswered'> & { isAnswered?: boolean; answers?: Map<number, string> })[];
 }
