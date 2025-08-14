@@ -1,4 +1,4 @@
-import { Survey } from '@/surveys/entities/survey.entity';
+import { ISurvey } from './isurvey';
 import { IUserSecret } from './iuser-secret';
 
 export interface IUser {
@@ -10,5 +10,5 @@ export interface IUser {
   updatedAt: Date;
   deletedAt: Date | null;
   userSecret: IUserSecret;
-  surveys: Survey[];
+  surveys: ISurvey[];
 }
