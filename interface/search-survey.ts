@@ -1,12 +1,12 @@
-import { GetCategoryResponse } from '@/models/GetCategoryResponse';
 import { SurveyStatus } from '@share/enums/survey-status';
+import { ICategory } from './icategory';
 
 export interface SearchSurvey {
   id: number;
   title: string;
   description: string;
   hashedUniqueKey: string;
-  category: GetCategoryResponse;
+  category: ICategory;
   isPublic: boolean;
   status: SurveyStatus;
   viewCount: number;
