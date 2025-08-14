@@ -4,6 +4,7 @@ import { SubscriptionTargetType } from '@share/enums/subscription-target-type';
 export interface IOrganization {
   id: number;
   name: string;
+  description: string | null;
   target: SubscriptionTargetType;
   status: SubscriptionStatusType;
   createdAt: Date;
