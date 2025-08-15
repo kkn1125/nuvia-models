@@ -5,6 +5,7 @@ export interface IQuestionOption {
   id: number | null;
   idx: number;
   label: string;
+  description?: string | null;
   sequence: number;
 }
 
@@ -17,7 +18,7 @@ export abstract class IQuestion {
   dataType!: DataType;
   isRequired!: boolean;
   questionOptions: IQuestionOption[] = [];
-  answers: Map<number, string> = new Map();
+  answers: Map<number, { optionId: number | null; value: string | number | null }> = new Map();
   isAnswered?: boolean = false;
   sequence!: number;
 
