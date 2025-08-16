@@ -13,6 +13,8 @@ export interface SearchSurvey {
   estimatedTime: number;
   questionAmount: number;
   responseAmount: number;
+  isExpired: boolean;
+  expiresAt: Date | null;
   createdAt: Date;
   updatedAt: Date;
 }
