@@ -15,9 +15,9 @@ export interface IResponseSurvey {
 }
 
 export interface IResponseSurveyCategory extends Omit<IResponseSurvey, 'questions'> {
-  questions: Omit<IQuestion, 'answers' | 'isAnswered'>[];
+  questions: Omit<IQuestion, 'questionAnswers' | 'isAnswered'>[];
 }
 
 export interface IResponseSurveyQuestionWithAnswers extends Omit<IResponseSurvey, 'questions'> {
-  questions: (Omit<IQuestion, 'answers' | 'isAnswered'> & { isAnswered?: boolean; answers?: Map<number, string> })[];
+  questions: (Omit<IQuestion, 'questionAnswers' | 'isAnswered'> & { isAnswered?: boolean; questionAnswers?: Map<number, string> })[];
 }

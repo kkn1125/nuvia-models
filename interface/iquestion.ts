@@ -18,7 +18,7 @@ export abstract class IQuestion {
   dataType!: DataType;
   isRequired!: boolean;
   questionOptions: IQuestionOption[] = [];
-  answers: Map<number, { optionId: number | null; value: string | number | null }> = new Map();
+  questionAnswers: Map<number, { optionId: number | null; value: string | number | null }> = new Map();
   isAnswered?: boolean = false;
   sequence!: number;
 
