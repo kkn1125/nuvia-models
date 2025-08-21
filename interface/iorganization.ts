@@ -1,5 +1,6 @@
 import { SubscriptionStatusType } from '@share/enums/subscription-status-type';
 import { SubscriptionTargetType } from '@share/enums/subscription-target-type';
+import { IPermission } from './ipermission';
 
 export interface IOrganization {
   id: number;
@@ -9,4 +10,5 @@ export interface IOrganization {
   status: SubscriptionStatusType;
   createdAt: Date;
   updatedAt: Date;
+  permission: IPermission;
 }
