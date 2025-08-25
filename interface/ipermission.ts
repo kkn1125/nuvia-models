@@ -6,7 +6,7 @@ export interface IPermissionGrant {
   id: number;
   permissionId: number;
   type: string;
-  description: string;
+  description: string | null;
   isAllowed: boolean;
 }
 
@@ -15,9 +15,9 @@ export interface IPermission {
   updatedAt: Date;
   id: number;
   role: UserRole;
-  description: string;
+  description: string | null;
   sequence: number;
-  isDeprecated: number;
-  isDefault: number;
+  isDeprecated: boolean;
+  isDefault: boolean;
   permissionGrants: IPermissionGrant[];
 }
