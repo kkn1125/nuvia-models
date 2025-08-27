@@ -1,4 +1,5 @@
 import { PlanNameType } from '@share/enums/plan-name-type.enum';
+import { IPlanGrantNested } from './iplan-grant-nested';
 
 export interface IOrganizationNestedPlan {
   id: number;
@@ -6,5 +7,5 @@ export interface IOrganizationNestedPlan {
   description: string | null;
   createdAt: Date;
   updatedAt: Date;
-  planGrants: IOrganizationNestedPlan[];
+  planGrants: IPlanGrantNested[];
 }
