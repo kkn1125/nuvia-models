@@ -5,6 +5,7 @@ import { UserRole } from '@share/enums/user-role';
 
 export interface IOrganization {
   id: number;
+  organizationId: number;
   name: string;
   description: string | null;
   target: SubscriptionTargetType;
