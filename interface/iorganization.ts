@@ -1,7 +1,7 @@
-import { PlanNameType } from '@share/enums/plan-name-type.enum';
 import { SubscriptionStatusType } from '@share/enums/subscription-status-type';
 import { SubscriptionTargetType } from '@share/enums/subscription-target-type';
 import { UserRole } from '@share/enums/user-role';
+import { IOrganizationNestedPlan } from './iorganization-nested-plan';
 
 export interface IOrganization {
   id: number;
@@ -11,7 +11,7 @@ export interface IOrganization {
   target: SubscriptionTargetType;
   status: SubscriptionStatusType;
   role: UserRole;
-  plan: PlanNameType;
+  plan: IOrganizationNestedPlan;
   createdAt: Date;
   // updatedAt: Date;
   // permission: IPermission;
