@@ -4,3 +4,4 @@ export const SurveyStatus = {
   Closed: 'closed',
 } as const;
 export type SurveyStatus = (typeof SurveyStatus)[keyof typeof SurveyStatus];
+export const SurveyStatusList = Object.values(SurveyStatus);
